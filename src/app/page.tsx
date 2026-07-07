@@ -1,0 +1,567 @@
+import Image from "next/image";
+import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
+import {
+  ArrowRight,
+  CalendarCheck,
+  Camera,
+  Check,
+  Clock,
+  Gift,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Sparkles,
+  Star,
+} from "lucide-react";
+import {
+  faqs,
+  galleryImages,
+  highlights,
+  maiHaven,
+  services,
+  testimonials,
+  wellnessTogether,
+} from "@/lib/mai-haven";
+
+const whatsappUrl = `https://wa.me/${maiHaven.whatsapp}?text=${encodeURIComponent(
+  "Hallo Mai Haven Spa, ich möchte gerne einen Termin anfragen."
+)}`;
+
+const signatureTreatments = [
+  {
+    name: "Head Spa",
+    eyebrow: "Kopfhaut & Haar",
+    image: "/images/mai-haven/head-spa.png",
+    price: "ab 60 €",
+    duration: "45-90 Minuten",
+    bullets: [
+      "Kopf-, Nacken- und Schultermassage",
+      "Gesichtsmassage, Peeling und Maske",
+      "Haarkur und Kräuterdampf",
+    ],
+  },
+  {
+    name: "Massage",
+    eyebrow: "Body Treatment",
+    image: "/images/mai-haven/spa-room-03.png",
+    price: "ab 70 €",
+    duration: "60-120 Minuten",
+    bullets: [
+      "Ganzkörpermassage zur tiefen Entspannung",
+      "Löst Verspannungen",
+      "Belebt Körper und Geist",
+    ],
+  },
+  {
+    name: "Wellness Together",
+    eyebrow: "Für zwei Personen",
+    image: "/images/mai-haven/spa-room-01.png",
+    price: "ab 90 €",
+    duration: "45 Min. - ca. 3 Stunden",
+    bullets: [
+      "Alle Behandlungen finden gleichzeitig statt",
+      "Individuell auf Ihre Wünsche abgestimmt",
+      "Ideal als Gutschein",
+    ],
+  },
+];
+
+const extras = [
+  {
+    title: "Geschenkgutschein",
+    value: "Ideal",
+    body: "Perfekt als Geschenk zum Geburtstag, Hochzeitstag, Valentinstag, Muttertag oder Weihnachten.",
+  },
+  {
+    title: "Tee oder Erfrischungsgetränk",
+    value: "Inklusive",
+    body: "Teil des Wellness Deluxe for Two mit gemeinsamer Auszeit und ruhigem Abschluss.",
+  },
+  {
+    title: "Fußpflege for Two",
+    value: "ab 90 €",
+    body: "Professionelle Fußpflege für zwei Personen - hygienisch, entspannend und mit viel Liebe zum Detail.",
+  },
+  {
+    title: "Rundum Wohlfühl Paket",
+    value: "ab 190 €",
+    body: "Head Spa, Ganzkörpermassage und Fußpflege als komplettes Erlebnis von Kopf bis Fuß.",
+  },
+];
+
+function Hero() {
+  return (
+    <section id="home" className="mh-hero">
+      <Image
+        src="/images/mai-haven/spa-room-01.png"
+        alt="Mai Haven Spa Behandlungsraum"
+        fill
+        priority
+        sizes="100vw"
+        className="mh-hero-bg"
+      />
+      <div className="mh-hero-shade" />
+      <div className="mh-hero-inner">
+        <div className="mh-hero-copy mh-reveal">
+          <p className="mh-kicker">Mai Haven Spa</p>
+          <h1>Quality Time for You</h1>
+          <p className="mh-hero-text">
+            Genießen Sie Head Spa, Massage, Fußpflege und Wellness Together -
+            individuell abgestimmt, ruhig begleitet und mit Liebe zum Detail.
+          </p>
+          <div className="mh-actions">
+            <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+              <CalendarCheck aria-hidden="true" />
+              Jetzt buchen
+            </Link>
+            <Link href="#wellness-together" className="mh-button mh-button-ghost">
+              Wellness Together
+              <ArrowRight aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="mh-scroll-note">Beauty. Wellness. Entspannung.</div>
+    </section>
+  );
+}
+
+function InfoStrip() {
+  return (
+    <section className="mh-info-strip" aria-label="Kontakt Kurzinfo">
+      <div>
+        <MapPin aria-hidden="true" />
+        <span>{maiHaven.station}</span>
+      </div>
+      <div>
+        <Clock aria-hidden="true" />
+        <span>Mo.-Sa. 10:00-20:00 Uhr</span>
+      </div>
+      <div>
+        <Phone aria-hidden="true" />
+        <span>{maiHaven.phones.join(" / ")}</span>
+      </div>
+    </section>
+  );
+}
+
+function Highlights() {
+  return (
+    <section className="mh-section mh-highlights" aria-label="Spa Highlights">
+      {highlights.map((item) => (
+        <article key={item.title}>
+          <span />
+          <h2>{item.title}</h2>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </section>
+  );
+}
+
+function SignatureTreatments() {
+  return (
+    <section id="behandlungen" className="mh-section mh-signature">
+      <div className="mh-section-head mh-section-head-wide">
+        <p className="mh-kicker">Unsere Behandlungen</p>
+        <h2>Private Auszeit im Mai Haven Spa</h2>
+        <p>
+          Buchen Sie Ihre Behandlung für Kopfhaut, Körper, Haut und Füße.
+          Jede Anwendung wird individuell auf Ihre Wünsche abgestimmt.
+        </p>
+      </div>
+      <div className="mh-signature-grid">
+        {signatureTreatments.map((treatment) => (
+          <article key={treatment.name} className="mh-signature-card">
+            <div className="mh-card-media">
+              <Image src={treatment.image} alt={treatment.name} fill sizes="(min-width: 900px) 30vw, 100vw" />
+            </div>
+            <div className="mh-signature-body">
+              <p className="mh-card-eyebrow">{treatment.eyebrow}</p>
+              <h3>{treatment.name}</h3>
+              <p className="mh-price-line">
+                <strong>{treatment.price}</strong>
+                <span>{treatment.duration}</span>
+              </p>
+              <ul>
+                {treatment.bullets.map((bullet) => (
+                  <li key={bullet}>
+                    <Check aria-hidden="true" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+              <Link href={whatsappUrl} target="_blank" rel="noreferrer">
+                Jetzt buchen
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Stats() {
+  return (
+    <section className="mh-stats" aria-label="Mai Haven Spa Zahlen">
+      <div>
+        <strong>{wellnessTogether.packages.length}+</strong>
+        <span>Wellness Pakete</span>
+      </div>
+      <div>
+        <strong>{services.length}+</strong>
+        <span>Behandlungen</span>
+      </div>
+      <div>
+        <strong>2</strong>
+        <span>Personen gleichzeitig</span>
+      </div>
+    </section>
+  );
+}
+
+function Atmosphere() {
+  return (
+    <section className="mh-atmosphere">
+      <Image
+        src="/images/mai-haven/gallery-wide.png"
+        alt="Empfangsbereich im Mai Haven Spa"
+        fill
+        sizes="100vw"
+      />
+      <div>
+        <p>HEAD SPA</p>
+        <p>MASSAGE</p>
+        <p>HIGH CLASS</p>
+        <p>BEAUTY</p>
+      </div>
+    </section>
+  );
+}
+
+function StudioNote() {
+  return (
+    <section className="mh-section mh-studio-note">
+      <div className="mh-note-media">
+        <Image
+          src="/images/mai-haven/gallery-portrait.png"
+          alt="Mai Haven Spa Detail"
+          fill
+          sizes="(min-width: 900px) 38vw, 100vw"
+        />
+      </div>
+      <div>
+        <p className="mh-kicker">Mai Haven Spa</p>
+        <h2>Schönheit & Wellness</h2>
+        <p>
+          Wellness ist am schönsten, wenn man sie teilt. Ob als Paar, mit der besten
+          Freundin, Mutter und Tochter, Geschwistern oder einem lieben Menschen -
+          genießen Sie Ihre gemeinsame Auszeit bei Mai Haven Spa.
+        </p>
+        <p>
+          Lehnen Sie sich zurück, entspannen Sie gemeinsam und tanken Sie neue Energie.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Extras() {
+  return (
+    <section className="mh-section mh-extras">
+      <div className="mh-section-head">
+        <p className="mh-kicker">Unsere Zusatzleistungen</p>
+        <h2>Extras</h2>
+        <p>
+          Von Gutschein bis Wellness Together - alles für gemeinsame Zeit,
+          Entspannung und unvergessliche Momente.
+        </p>
+      </div>
+      <div className="mh-extras-grid">
+        {extras.map((extra) => (
+          <article key={extra.title}>
+            <p>{extra.title}</p>
+            <strong>{extra.value}</strong>
+            <span>{extra.body}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function WellnessTogether() {
+  return (
+    <section id="wellness-together" className="mh-together">
+      <div className="mh-together-visual">
+        <Image
+          src="/images/mai-haven/spa-room-02.png"
+          alt="Mai Haven Spa Wellness Raum"
+          fill
+          sizes="(min-width: 900px) 50vw, 100vw"
+        />
+      </div>
+      <div className="mh-together-content">
+        <p className="mh-kicker">Überraschen Sie Ihre Liebsten</p>
+        <h2>{wellnessTogether.headline}</h2>
+        <p className="mh-together-lead">{wellnessTogether.subheadline}</p>
+        {wellnessTogether.intro.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+        <div className="mh-feature-line">
+          <Sparkles aria-hidden="true" />
+          <span>Alle Behandlungen finden gleichzeitig statt.</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Packages() {
+  return (
+    <section className="mh-section mh-packages">
+      <div className="mh-section-head">
+        <p className="mh-kicker">Preisliste</p>
+        <h2>Wellness Together</h2>
+        <p>Gemeinsam entspannen. Gemeinsam genießen.</p>
+      </div>
+      <div className="mh-package-list">
+        {wellnessTogether.packages.map((item, index) => (
+          <article key={item.name} className={index === 4 ? "mh-package mh-package-featured" : "mh-package"}>
+            <div>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              {item.includes ? (
+                <ul>
+                  {item.includes.map((include) => (
+                    <li key={include}>
+                      <Check aria-hidden="true" />
+                      {include}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+            <div className="mh-prices">
+              {item.prices.map((price) => (
+                <p key={`${item.name}-${price.duration}`}>
+                  <span>{price.duration}</span>
+                  <strong>{price.price}</strong>
+                </p>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Treatments() {
+  return (
+    <section className="mh-section mh-treatments">
+      <div className="mh-section-head">
+        <p className="mh-kicker">Weitere Behandlungen</p>
+        <h2>Menü</h2>
+        <p>Ein sorgfältig ausgewähltes Menü für Kopfhaut, Körper, Haut und Füße.</p>
+      </div>
+      <div className="mh-service-grid">
+        {services.map((service) => (
+          <article key={service.name} className="mh-service">
+            <div>
+              <h3>{service.name}</h3>
+              {service.description ? <p>{service.description}</p> : null}
+            </div>
+            <div className="mh-service-prices">
+              {service.prices.map((price) => (
+                <p key={`${service.name}-${price.duration}`}>
+                  <span>{price.duration}</span>
+                  <strong>{price.price}</strong>
+                </p>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function GiftSection() {
+  return (
+    <section className="mh-gift">
+      <div>
+        <Gift aria-hidden="true" />
+        <p className="mh-kicker">Ideal als Gutschein</p>
+        <h2>Schenken Sie gemeinsame Zeit.</h2>
+        <p>
+          Perfekt als Geschenk zum Geburtstag, Hochzeitstag, Valentinstag,
+          Muttertag oder Weihnachten.
+        </p>
+      </div>
+      <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+        Gutschein anfragen
+        <ArrowRight aria-hidden="true" />
+      </Link>
+    </section>
+  );
+}
+
+function Gallery() {
+  return (
+    <section id="galerie" className="mh-section mh-gallery-section">
+      <div className="mh-section-head">
+        <p className="mh-kicker">Fotogalerie</p>
+        <h2>Ruhige Räume. Sanfte Details.</h2>
+      </div>
+      <div className="mh-gallery">
+        {galleryImages.map((image, index) => (
+          <figure key={image.src} className={index === 0 ? "mh-gallery-wide" : ""}>
+            <Image src={image.src} alt={image.alt} fill sizes="(min-width: 900px) 33vw, 100vw" />
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ReviewsAndFaq() {
+  return (
+    <section id="faq" className="mh-section mh-reviews-faq">
+      <div>
+        <p className="mh-kicker">FAQs</p>
+        <h2>Eure Fragen, unsere Antworten</h2>
+        <div className="mh-faq-list">
+          {faqs.map((faq) => (
+            <details key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="mh-kicker">Bewertungen</p>
+        <h2>Was Gäste sagen</h2>
+        <div className="mh-testimonials">
+          {testimonials.map((item) => (
+            <blockquote key={item.name}>
+              <Star aria-hidden="true" />
+              <p>&quot;{item.quote}&quot;</p>
+              <footer>
+                <strong>{item.name}</strong>
+                <span>{item.role}</span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="kontakt" className="mh-contact">
+      <div className="mh-contact-copy">
+        <p className="mh-kicker">Kontakt</p>
+        <h2>Bereit für Ihre Auszeit?</h2>
+        <p>{maiHaven.address}</p>
+        <div className="mh-contact-lines">
+          <a href={`tel:${maiHaven.phones[1].replace(/\s/g, "")}`}>
+            <Phone aria-hidden="true" />
+            {maiHaven.phones[1]}
+          </a>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden="true" />
+            WhatsApp: {maiHaven.phones[0]}
+          </a>
+          <a href={`mailto:${maiHaven.email}`}>
+            <Mail aria-hidden="true" />
+            {maiHaven.email}
+          </a>
+          <a href={maiHaven.social.instagram} target="_blank" rel="noreferrer">
+            <Camera aria-hidden="true" />
+            Instagram
+          </a>
+          <a href={maiHaven.social.facebook} target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H17V3.6c-.3-.04-1.3-.13-2.46-.13-2.43 0-4.1 1.48-4.1 4.2v2.34H7.7V13h2.74v8h3.06z" />
+            </svg>
+            Facebook
+          </a>
+        </div>
+        <div className="mh-hours">
+          {maiHaven.hours.map((hour) => (
+            <p key={hour.days}>
+              <span>{hour.days}</span>
+              <strong>{hour.value}</strong>
+            </p>
+          ))}
+        </div>
+        <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+          Termin per WhatsApp anfragen
+        </Link>
+      </div>
+      <iframe
+        title="Mai Haven Spa Google Maps"
+        src={maiHaven.mapsEmbed}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="mh-footer">
+      <div>
+        <strong>Mai Haven Spa</strong>
+        <p>{maiHaven.address}</p>
+      </div>
+      <nav aria-label="Footer Navigation">
+        <Link href="#home">Home</Link>
+        <Link href="#galerie">Galerie</Link>
+        <Link href="#kontakt">Kontakt</Link>
+        <Link href={maiHaven.social.instagram} target="_blank" rel="noreferrer">
+          Instagram
+        </Link>
+        <Link href={maiHaven.social.facebook} target="_blank" rel="noreferrer">
+          Facebook
+        </Link>
+      </nav>
+      <p>Copyright © 2026 Hoangcaster</p>
+    </footer>
+  );
+}
+
+export default function Home() {
+  return (
+    <div className="mh-site">
+      <SiteHeader />
+      <main>
+        <Hero />
+        <InfoStrip />
+        <Highlights />
+        <SignatureTreatments />
+        <Stats />
+        <Atmosphere />
+        <StudioNote />
+        <Extras />
+        <WellnessTogether />
+        <Packages />
+        <Treatments />
+        <GiftSection />
+        <Gallery />
+        <ReviewsAndFaq />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}

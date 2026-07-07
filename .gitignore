@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+*.log
+dist/
+*.tsbuildinfo
+tmp/
+
+# Nested/duplicate worktree copies (cleaned up)
+taichinh/
+taichinh.worktrees/
+*.worktrees/
