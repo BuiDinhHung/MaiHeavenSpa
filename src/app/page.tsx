@@ -56,7 +56,7 @@ const signatureTreatments = [
   {
     name: "Wellness Together",
     eyebrow: "Für zwei Personen",
-    image: "/images/mai-haven/spa-room-01.png",
+    image: "/images/mai-haven/services/cặp đôi.png",
     price: "ab 90 €",
     duration: "45 Min. - ca. 3 Stunden",
     bullets: [
