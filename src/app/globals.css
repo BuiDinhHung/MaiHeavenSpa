@@ -166,6 +166,26 @@ blockquote {
   opacity: 0.6;
 }
 
+.mh-menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.mh-menu-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.mh-mobile-booking {
+  display: none;
+}
+
 .mh-header-cta,
 .mh-button {
   display: inline-flex;
@@ -1090,18 +1110,20 @@ blockquote {
 
 .mh-service-media {
   position: relative;
-  min-height: 210px;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: var(--gold-soft);
+  background: linear-gradient(145deg, #f2ece3, #e8eee8);
 }
 
 .mh-service-media img {
-  object-fit: cover;
-  transition: transform 500ms ease;
+  object-fit: contain;
+  object-position: 50% 50%;
+  transition: filter 300ms ease;
 }
 
 .mh-service:hover .mh-service-media img {
-  transform: scale(1.035);
+  filter: brightness(1.035) saturate(1.03);
 }
 
 .mh-service-content {
@@ -1495,12 +1517,54 @@ blockquote {
   .mh-header {
     top: 10px;
     width: min(calc(100% - 20px), var(--content));
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 10px;
     padding: 10px;
   }
 
   .mh-nav {
-    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.97);
+    padding: 8px 18px;
+    color: var(--emerald);
+    box-shadow: 0 22px 48px rgba(24, 18, 12, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+    pointer-events: none;
+    backdrop-filter: blur(18px);
+  }
+
+  .mh-nav-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .mh-nav a {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    letter-spacing: 0.13em;
+  }
+
+  .mh-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .mh-menu-toggle {
+    display: inline-grid;
   }
 
   .mh-brand {
@@ -1513,16 +1577,33 @@ blockquote {
   }
 
   .mh-header-cta {
-    min-height: 38px;
-    padding: 10px 13px;
-    font-size: 12px;
+    display: none;
   }
 
-  .mh-nav {
-    gap: 12px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    font-size: 10px;
+  .mh-mobile-booking {
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 100;
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: #a98964;
+    padding: 13px 20px;
+    color: #ffffff;
+    box-shadow: 0 14px 34px rgba(48, 29, 13, 0.3);
+    font-family: var(--font-display), Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1;
+  }
+
+  .mh-mobile-booking svg {
+    width: 17px;
+    height: 17px;
   }
 
   .mh-hero {
@@ -1724,10 +1805,11 @@ blockquote {
   .mh-service-media {
     width: 100%;
     min-height: 0;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .mh-service-media img {
+    object-fit: contain;
     object-position: 50% 50%;
   }
 
@@ -1756,6 +1838,10 @@ blockquote {
 }
 
 @media (max-width: 420px) {
+  .mh-brand > span:last-child {
+    display: none;
+  }
+
   .mh-brand span:last-child {
     max-width: 150px;
     overflow: hidden;

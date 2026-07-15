@@ -20,9 +20,10 @@ export const maiHaven = {
 
 export const navItems = [
   { label: "HOME", href: "#home" },
-  { label: "Kontakt", href: "#kontakt" },
-  { label: "Galerie", href: "#galerie" },
+  { label: "Behandlungen", href: "#behandlungen" },
   { label: "Wellness Together", href: "#wellness-together" },
+  { label: "Galerie", href: "#galerie" },
+  { label: "Kontakt", href: "#kontakt" },
 ];
 
 export const highlights = [
@@ -121,7 +122,7 @@ export const services = [
   },
   {
     name: "Fußpflege und Fußmassage",
-    image: "/images/mai-haven/services/foot-care-massage.png",
+    image: "/images/mai-haven/services/làm chân.png",
     description: "Kräuterfußbad, Hornhautentfernung, Nagelpflege, Massage und Pflege.",
     prices: [
       { duration: "30 Minuten", price: "40 €" },

@@ -326,8 +326,8 @@ function WellnessTogether() {
     <section id="wellness-together" className="mh-together">
       <div className="mh-together-visual">
         <Image
-          src="/images/mai-haven/spa-room-02.png"
-          alt="Mai Haven Spa Wellness Raum"
+          src="/images/mai-haven/services/cặp đôi.png"
+          alt="Wellness-Behandlung für zwei Personen im Mai Haven Spa"
           fill
           sizes="(min-width: 900px) 50vw, 100vw"
         />
