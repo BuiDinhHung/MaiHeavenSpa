@@ -18,7 +18,6 @@ import {
 import {
   faqs,
   galleryImages,
-  highlights,
   maiHaven,
   services,
   testimonials,
@@ -95,35 +94,45 @@ function Hero() {
   return (
     <section id="home" className="mh-hero">
       <Image
-        src="/images/mai-haven/spa-room-01.png"
-        alt="Mai Haven Spa Behandlungsraum"
+        src="/images/mai-haven/anhbiadautrangdesktop.png"
+        alt="Massagebehandlung im Mai Haven Spa"
         fill
         priority
         sizes="100vw"
-        className="mh-hero-bg"
+        className="mh-hero-bg mh-hero-bg-desktop"
+      />
+      <Image
+        src="/images/mai-haven/anhbiadautrang.png"
+        alt="Massagebehandlung im Mai Haven Spa"
+        fill
+        priority
+        sizes="(max-width: 760px) 100vw, 1px"
+        className="mh-hero-bg mh-hero-bg-mobile"
       />
       <div className="mh-hero-shade" />
       <div className="mh-hero-inner">
         <div className="mh-hero-copy mh-reveal">
           <p className="mh-kicker">Mai Haven Spa</p>
-          <h1>Quality Time for You</h1>
+          <h1>Ihre Auszeit.<br />Nur für Sie.</h1>
+          <p className="mh-hero-services">Massage · Head Spa · Fußpflege in Berlin</p>
           <p className="mh-hero-text">
-            Genießen Sie Head Spa, Massage, Fußpflege und Wellness Together -
-            individuell abgestimmt, ruhig begleitet und mit Liebe zum Detail.
+            Entspannen. Abschalten. Neue Energie tanken.<br />
+            Individuelle Behandlungen mit Herz, Ruhe und Erfahrung.
           </p>
           <div className="mh-actions">
             <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
               <CalendarCheck aria-hidden="true" />
               Jetzt buchen
             </Link>
-            <Link href="#wellness-together" className="mh-button mh-button-ghost">
-              Wellness Together
-              <ArrowRight aria-hidden="true" />
-            </Link>
           </div>
         </div>
       </div>
-      <div className="mh-scroll-note">Beauty. Wellness. Entspannung.</div>
+      <div className="mh-google-proof mh-reveal" aria-label="5,0 von 5 Sternen bei Google Bewertungen">
+        <span aria-hidden="true">★★★★★</span>
+        <strong>5,0</strong>
+        <small>Google Bewertungen</small>
+      </div>
+      <div className="mh-scroll-note">Ihre Wohlfühlzeit in Berlin</div>
     </section>
   );
 }
@@ -149,14 +158,36 @@ function InfoStrip() {
 
 function Highlights() {
   return (
-    <section className="mh-section mh-highlights" aria-label="Spa Highlights">
-      {highlights.map((item) => (
-        <article key={item.title}>
-          <span />
-          <h2>{item.title}</h2>
-          <p>{item.body}</p>
-        </article>
-      ))}
+    <section className="mh-section mh-welcome" aria-labelledby="welcome-title">
+      <div className="mh-welcome-copy">
+        <p className="mh-kicker">Willkommen im Mai Haven Spa</p>
+        <h2 id="welcome-title">
+          Ihre Oase für Entspannung,<br />
+          Regeneration und Wohlbefinden.
+        </h2>
+        <p>
+          Genießen Sie wohltuende Massagen, entspannendes Head Spa und professionelle
+          Fußpflege – individuell auf Ihre Bedürfnisse abgestimmt.
+        </p>
+        <p>
+          In ruhiger Atmosphäre nehmen wir uns Zeit für Sie, damit Sie neue Kraft
+          schöpfen und den Alltag hinter sich lassen können.
+        </p>
+        <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+          Jetzt Termin buchen
+          <ArrowRight aria-hidden="true" />
+        </Link>
+      </div>
+      <ul className="mh-benefits" aria-label="Was Sie bei uns erwartet">
+        {[
+          "Individuelle Behandlungen",
+          "Ruhige Wohlfühlatmosphäre",
+          "Hochwertige Pflegeprodukte",
+          "Liebe zum Detail",
+        ].map((item) => (
+          <li key={item}><Check aria-hidden="true" />{item}</li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -245,25 +276,21 @@ function Atmosphere() {
 
 function StudioNote() {
   return (
-    <section className="mh-section mh-studio-note">
+    <section id="inhaberin" className="mh-section mh-studio-note">
       <div className="mh-note-media">
         <Image
           src="/images/mai-haven/gallery-portrait.png"
-          alt="Mai Haven Spa Detail"
+          alt="Ruhige Atmosphäre im Mai Haven Spa"
           fill
           sizes="(min-width: 900px) 38vw, 100vw"
         />
       </div>
       <div>
-        <p className="mh-kicker">Mai Haven Spa</p>
-        <h2>Schönheit & Wellness</h2>
+        <p className="mh-kicker">Über die Inhaberin</p>
+        <h2>Willkommen bei Mai Haven Spa.</h2>
         <p>
-          Wellness ist am schönsten, wenn man sie teilt. Ob als Paar, mit der besten
-          Freundin, Mutter und Tochter, Geschwistern oder einem lieben Menschen -
-          genießen Sie Ihre gemeinsame Auszeit bei Mai Haven Spa.
-        </p>
-        <p>
-          Lehnen Sie sich zurück, entspannen Sie gemeinsam und tanken Sie neue Energie.
+          Mit langjähriger Erfahrung und viel Leidenschaft begleiten wir unsere Gäste
+          auf dem Weg zu mehr Entspannung und Wohlbefinden.
         </p>
       </div>
     </section>
@@ -363,7 +390,7 @@ function Packages() {
 
 function Treatments() {
   return (
-    <section className="mh-section mh-treatments">
+    <section id="leistungen" className="mh-section mh-treatments">
       <div className="mh-section-head">
         <p className="mh-kicker">Weitere Behandlungen</p>
         <h2>Menü</h2>
@@ -372,17 +399,25 @@ function Treatments() {
       <div className="mh-service-grid">
         {services.map((service) => (
           <article key={service.name} className="mh-service">
-            <div>
+            <div className="mh-service-media">
+              <Image
+                src={service.image}
+                alt={`${service.name} im Mai Haven Spa`}
+                fill
+                sizes="(min-width: 900px) 26vw, 100vw"
+              />
+            </div>
+            <div className="mh-service-content">
               <h3>{service.name}</h3>
               {service.description ? <p>{service.description}</p> : null}
-            </div>
-            <div className="mh-service-prices">
-              {service.prices.map((price) => (
-                <p key={`${service.name}-${price.duration}`}>
-                  <span>{price.duration}</span>
-                  <strong>{price.price}</strong>
-                </p>
-              ))}
+              <div className="mh-service-prices">
+                {service.prices.map((price) => (
+                  <p key={`${service.name}-${price.duration}`}>
+                    <span>{price.duration}</span>
+                    <strong>{price.price}</strong>
+                  </p>
+                ))}
+              </div>
             </div>
           </article>
         ))}
@@ -471,6 +506,10 @@ function Contact() {
         <p className="mh-kicker">Kontakt</p>
         <h2>Bereit für Ihre Auszeit?</h2>
         <p>{maiHaven.address}</p>
+        <p className="mh-location-note">
+          <MapPin aria-hidden="true" />
+          Nur wenige Schritte von der U6 Platz der Luftbrücke entfernt.
+        </p>
         <div className="mh-contact-lines">
           <a href={`tel:${maiHaven.phones[1].replace(/\s/g, "")}`}>
             <Phone aria-hidden="true" />

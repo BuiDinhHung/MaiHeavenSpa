@@ -91,6 +91,7 @@ export const wellnessTogether = {
 export const services = [
   {
     name: "Head Spa – Tiefenentspannung & Pflege",
+    image: "/images/mai-haven/services/head-spa.png",
     description:
       "Kopf-, Nacken- und Schultermassage, Gesichtsmassage, Peeling, Maske, Haarkur und Kräuterdampf.",
     prices: [
@@ -101,6 +102,7 @@ export const services = [
   },
   {
     name: "Body Massage",
+    image: "/images/mai-haven/services/body-massage.png",
     description:
       "Ganzkörpermassage zur tiefen Entspannung. Löst Verspannungen und belebt Körper und Geist.",
     prices: [
@@ -111,6 +113,7 @@ export const services = [
   },
   {
     name: "Hot Stone & Kräuterstempel",
+    image: "/images/mai-haven/services/hot-stone-herbal-compress.png",
     prices: [
       { duration: "60 Minuten", price: "80 €" },
       { duration: "90 Minuten", price: "110 €" },
@@ -118,6 +121,7 @@ export const services = [
   },
   {
     name: "Fußpflege und Fußmassage",
+    image: "/images/mai-haven/services/foot-care-massage.png",
     description: "Kräuterfußbad, Hornhautentfernung, Nagelpflege, Massage und Pflege.",
     prices: [
       { duration: "30 Minuten", price: "40 €" },
@@ -127,6 +131,7 @@ export const services = [
   },
   {
     name: "Kopf-Schulter-Rückenmassage",
+    image: "/images/mai-haven/services/head-shoulder-back-massage.png",
     description:
       "Löst gezielt Verspannungen im Nacken- und Rückenbereich und schenkt Leichtigkeit.",
     prices: [
@@ -137,6 +142,7 @@ export const services = [
   },
   {
     name: "Gesichtsmassage – Entspannung & Pflege",
+    image: "/images/mai-haven/services/facial-massage.png",
     description:
       "Wohltuende Gesichtsmassage für Entspannung, Regeneration und ein strahlendes Hautbild.",
     prices: [
@@ -146,6 +152,7 @@ export const services = [
   },
   {
     name: "Deep Clean Skin – Intensive Gesichtsreinigung",
+    image: "/images/mai-haven/services/deep-clean-skin.png",
     description:
       "Tiefenreinigung für ein frisches, klares Hautbild. Verfeinert die Poren und sorgt für strahlende Frische.",
     prices: [
@@ -155,6 +162,7 @@ export const services = [
   },
   {
     name: "Rundum Wohlfühl Paket",
+    image: "/images/mai-haven/services/wellness-package.png",
     description:
       "Head Spa, Ganzkörpermassage und Fußpflege als komplettes Erlebnis von Kopf bis Fuß.",
     prices: [
@@ -164,6 +172,7 @@ export const services = [
   },
   {
     name: "Beauty & Pflege",
+    image: "/images/mai-haven/services/beauty-care.png",
     prices: [
       { duration: "Maniküre", price: "30 €" },
       { duration: "Pediküre mit Shellac", price: "ab 45 €" },
