@@ -1722,7 +1722,13 @@ blockquote {
   }
 
   .mh-service-media {
-    min-height: 280px;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 2 / 3;
+  }
+
+  .mh-service-media img {
+    object-position: 50% 50%;
   }
 
   .mh-gift {
