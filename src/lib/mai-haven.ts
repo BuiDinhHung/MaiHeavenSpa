@@ -4,6 +4,7 @@ export const maiHaven = {
   address: "Manfred-von-Richthofen-Str. 8, 12101 Berlin",
   station: "U6-Bhf Platz der Luftbrücke",
   phones: ["0176 57992233", "030 47480959"],
+  phoneTel: ["+4917657992233", "+493047480959"],
   whatsapp: "4917657992233",
   email: "maihavenspa2025@gmail.com",
   hours: [

@@ -120,10 +120,10 @@ function Hero() {
             Individuelle Behandlungen mit Herz, Ruhe und Erfahrung.
           </p>
           <div className="mh-actions">
-            <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+            <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
               <CalendarCheck aria-hidden="true" />
               Jetzt buchen
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -148,9 +148,13 @@ function InfoStrip() {
         <Clock aria-hidden="true" />
         <span>Mo.-Sa. 10:00-20:00 Uhr</span>
       </div>
-      <div>
+      <div className="mh-info-phone">
         <Phone aria-hidden="true" />
-        <span>{maiHaven.phones.join(" / ")}</span>
+        <span>
+          <a href={`tel:${maiHaven.phoneTel[0]}`}>{maiHaven.phones[0]}</a>
+          <span aria-hidden="true"> / </span>
+          <a href={`tel:${maiHaven.phoneTel[1]}`}>{maiHaven.phones[1]}</a>
+        </span>
       </div>
     </section>
   );
@@ -173,10 +177,10 @@ function Highlights() {
           In ruhiger Atmosphäre nehmen wir uns Zeit für Sie, damit Sie neue Kraft
           schöpfen und den Alltag hinter sich lassen können.
         </p>
-        <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+        <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
           Jetzt Termin buchen
           <ArrowRight aria-hidden="true" />
-        </Link>
+        </a>
       </div>
       <ul className="mh-benefits" aria-label="Was Sie bei uns erwartet">
         {[
@@ -224,10 +228,10 @@ function SignatureTreatments() {
                   </li>
                 ))}
               </ul>
-              <Link href={whatsappUrl} target="_blank" rel="noreferrer">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 Jetzt buchen
                 <ArrowRight aria-hidden="true" />
-              </Link>
+              </a>
             </div>
           </article>
         ))}
@@ -438,10 +442,10 @@ function GiftSection() {
           Muttertag oder Weihnachten.
         </p>
       </div>
-      <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+      <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
         Gutschein anfragen
         <ArrowRight aria-hidden="true" />
-      </Link>
+      </a>
     </section>
   );
 }
@@ -511,11 +515,11 @@ function Contact() {
           Nur wenige Schritte von der U6 Platz der Luftbrücke entfernt.
         </p>
         <div className="mh-contact-lines">
-          <a href={`tel:${maiHaven.phones[1].replace(/\s/g, "")}`}>
+          <a href={`tel:${maiHaven.phoneTel[1]}`}>
             <Phone aria-hidden="true" />
             {maiHaven.phones[1]}
           </a>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
             <MessageCircle aria-hidden="true" />
             WhatsApp: {maiHaven.phones[0]}
           </a>
@@ -542,9 +546,9 @@ function Contact() {
             </p>
           ))}
         </div>
-        <Link href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noreferrer">
+        <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
           Termin per WhatsApp anfragen
-        </Link>
+        </a>
       </div>
       <iframe
         title="Mai Haven Spa Google Maps"

@@ -46,9 +46,9 @@ export default function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link href={whatsappUrl} className="mh-header-cta" target="_blank" rel="noreferrer">
+        <a href={whatsappUrl} className="mh-header-cta" target="_blank" rel="noopener noreferrer">
           Jetzt buchen
-        </Link>
+        </a>
         <button
           type="button"
           className="mh-menu-toggle"
@@ -60,16 +60,16 @@ export default function SiteHeader() {
           {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
         </button>
       </header>
-      <Link
+      <a
         href={whatsappUrl}
         className="mh-mobile-booking"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         aria-label="Jetzt Termin über WhatsApp buchen"
       >
         <CalendarDays aria-hidden="true" />
         Jetzt buchen
-      </Link>
+      </a>
     </>
   );
 }
