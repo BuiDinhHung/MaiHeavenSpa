@@ -33,6 +33,7 @@ const signatureTreatments = [
     name: "Head Spa",
     eyebrow: "Kopfhaut & Haar",
     image: "/images/mai-haven/head-spa.png",
+    href: "#service-head-spa",
     price: "ab 60 €",
     duration: "45-90 Minuten",
     bullets: [
@@ -45,6 +46,7 @@ const signatureTreatments = [
     name: "Massage",
     eyebrow: "Body Treatment",
     image: "/images/mai-haven/spa-room-03.png",
+    href: "#service-body-massage",
     price: "ab 70 €",
     duration: "60-120 Minuten",
     bullets: [
@@ -57,6 +59,7 @@ const signatureTreatments = [
     name: "Wellness Together",
     eyebrow: "Für zwei Personen",
     image: "/images/mai-haven/services/cặp đôi.png",
+    href: "#wellness-together",
     price: "ab 90 €",
     duration: "45 Min. - ca. 3 Stunden",
     bullets: [
@@ -166,19 +169,16 @@ function Highlights() {
       <div className="mh-welcome-copy">
         <p className="mh-kicker">Willkommen im Mai Haven Spa</p>
         <h2 id="welcome-title">
-          Ihre Oase für Entspannung,<br />
-          Regeneration und Wohlbefinden.
+          Ein Ort, an dem Körper und Seele<br />
+          zur Ruhe kommen.
         </h2>
         <p>
-          Genießen Sie wohltuende Massagen, entspannendes Head Spa und professionelle
-          Fußpflege – individuell auf Ihre Bedürfnisse abgestimmt.
-        </p>
-        <p>
-          In ruhiger Atmosphäre nehmen wir uns Zeit für Sie, damit Sie neue Kraft
-          schöpfen und den Alltag hinter sich lassen können.
+          Mit achtsamen Berührungen, individueller Betreuung und einer entspannten
+          Atmosphäre schenken wir Ihnen Zeit zum Loslassen, neue Kraft und echtes
+          Wohlbefinden.
         </p>
         <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
-          Jetzt Termin buchen
+          ✨ Jetzt Termin buchen
           <ArrowRight aria-hidden="true" />
         </a>
       </div>
@@ -209,7 +209,7 @@ function SignatureTreatments() {
       </div>
       <div className="mh-signature-grid">
         {signatureTreatments.map((treatment) => (
-          <article key={treatment.name} className="mh-signature-card">
+          <a key={treatment.name} href={treatment.href} className="mh-signature-card">
             <div className="mh-card-media">
               <Image src={treatment.image} alt={treatment.name} fill sizes="(min-width: 900px) 30vw, 100vw" />
             </div>
@@ -228,12 +228,8 @@ function SignatureTreatments() {
                   </li>
                 ))}
               </ul>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                Jetzt buchen
-                <ArrowRight aria-hidden="true" />
-              </a>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </section>
@@ -402,15 +398,21 @@ function Treatments() {
       </div>
       <div className="mh-service-grid">
         {services.map((service) => (
-          <article key={service.name} className="mh-service">
-            <div className="mh-service-media">
-              <Image
-                src={service.image}
-                alt={`${service.name} im Mai Haven Spa`}
-                fill
-                sizes="(min-width: 900px) 26vw, 100vw"
-              />
-            </div>
+          <article
+            key={service.name}
+            id={service.id}
+            className={service.image ? "mh-service" : "mh-service mh-service-no-media"}
+          >
+            {service.image ? (
+              <div className="mh-service-media">
+                <Image
+                  src={service.image}
+                  alt={`${service.name} im Mai Haven Spa`}
+                  fill
+                  sizes="(min-width: 900px) 26vw, 100vw"
+                />
+              </div>
+            ) : null}
             <div className="mh-service-content">
               <h3>{service.name}</h3>
               {service.description ? <p>{service.description}</p> : null}
@@ -422,6 +424,10 @@ function Treatments() {
                   </p>
                 ))}
               </div>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                Jetzt buchen
+                <ArrowRight aria-hidden="true" />
+              </a>
             </div>
           </article>
         ))}

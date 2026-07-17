@@ -92,6 +92,7 @@ export const wellnessTogether = {
 
 export const services = [
   {
+    id: "service-head-spa",
     name: "Head Spa – Tiefenentspannung & Pflege",
     image: "/images/mai-haven/services/head-spa.png",
     description:
@@ -103,10 +104,11 @@ export const services = [
     ],
   },
   {
+    id: "service-body-massage",
     name: "Body Massage",
-    image: "/images/mai-haven/services/body-massage.png",
+    image: "/images/mai-haven/services/hot-stone-herbal-compress.png",
     description:
-      "Ganzkörpermassage zur tiefen Entspannung. Löst Verspannungen und belebt Körper und Geist.",
+      "Nicht jede Verspannung braucht Medikamente – manchmal braucht der Körper einfach die richtigen Hände.",
     prices: [
       { duration: "60 Minuten", price: "70 €" },
       { duration: "90 Minuten", price: "100 €" },
@@ -174,7 +176,6 @@ export const services = [
   },
   {
     name: "Beauty & Pflege",
-    image: "/images/mai-haven/services/beauty-care.png",
     prices: [
       { duration: "Maniküre", price: "30 €" },
       { duration: "Pediküre mit Shellac", price: "ab 45 €" },
