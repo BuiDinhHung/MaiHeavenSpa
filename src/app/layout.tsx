@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Upright, Montserrat } from "next/font/google";
+import { maiHaven } from "@/lib/mai-haven";
 import "./globals.css";
 
 const cormorant = Cormorant_Upright({
@@ -18,8 +19,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Mai Haven Spa - Schönheit & Wellness in Berlin",
-  description:
-    "Mai Haven Spa in Berlin Tempelhof: Head Spa, Massage, Fußpflege, Beauty-Behandlungen und Wellness Together für zwei Personen.",
+  description: `${maiHaven.name}, ${maiHaven.address}. Head Spa, Massage, Fußpflege, Beauty-Behandlungen und Wellness Together für zwei Personen.`,
 };
 
 export default function RootLayout({

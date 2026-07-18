@@ -207,21 +207,44 @@ export const galleryImages = [
 export const testimonials = [
   {
     quote:
-      "Die Massage wurde als sehr professionell und angenehm beschrieben - perfekt, um wieder locker zu werden.",
-    name: "Katharina",
-    role: "Verifizierte Bewertung",
+      "Ich hatte eine wunderbare Erfahrung im Mai Haven Spa! Alles war sehr sauber, angenehm und professionell. Ich komme auf jeden Fall wieder. 🌸",
+    name: "Trang Nguyen",
+    role: "6 Bewertungen · 3 Fotos",
+    rating: 5,
+  },
+  {
+    quote: "Super Massage\nFreundlichen Personal\nRelax Atmosphäre\nSauber Salon",
+    name: "Maiia Katts",
+    role: "Local Guide · 50 Bewertungen",
+    rating: 5,
   },
   {
     quote:
-      "Der Salon wirkt ruhig und schön; die Oberkörpermassage wurde als eine der besten Erfahrungen hervorgehoben.",
-    name: "Simone",
-    role: "Verifizierte Bewertung",
+      "Ich war heute spontan in der Gegend und hab den Laden gesehen. Da ich extreme Kopfschmerzen und Verspannungen hatte, dachte ich, lass ich mir eine schöne Rücken Kopf Nacken Massage geben. Ich war begeistert 100% zufrieden. Meine Kopfschmerzen waren danach weg, im Anschluss hab ich mir noch eine Pediküre und Fußmassage gegönnt, die auch äußerst sauber und wohltuend war.\nKann den Laden sehr empfehlen!\n\nGerne wieder !:)",
+    name: "chiara-maria Knespel",
+    role: "12 Bewertungen",
+    rating: 5,
   },
   {
     quote:
-      "Gäste loben die einfühlsame Behandlung, besondere Fürsorge und dass sich das Team wirklich Zeit nimmt.",
-    name: "Mariann",
-    role: "Verifizierte Bewertung",
+      "Ich hatte schon viele Massagen in meinem Leben, aber das war eine der Besten überhaupt. Der ganze Laden ist sehr sauber, gemütlich und die Mitarbeiter total freundlich. Man fühlt sich direkt wie zu Hause.",
+    name: "Silvia Gemberle",
+    role: "4 Bewertungen",
+    rating: 5,
+  },
+  {
+    quote:
+      "Ich hatte heute eine Massage im Mai-Haven und es war richtig toll 💕 Ruhige und angenehme Atmosphäre, sehr nette Mitarbeiter*innen und die Behandlung an sich war auch super.\nIch komme auf jeden Fall wieder vorbei :)",
+    name: "Lisa Braun",
+    role: "Local Guide · 16 Bewertungen",
+    rating: 5,
+  },
+  {
+    quote:
+      "Ich habe mir heute das „Head-Spa“ gegönnt. Es war unglaublich schön und entspannend. Bin sogar zwischendurch eingeschlafen 😴\nIch bin sooo tiefenentspannt nach Hause gegangen und meine Haare und die Gesichtshaut sind samtweich!\nDer Laden ist wirklich toll und eine wahre Bereicherung für unsere Nachbarschaft. Ganz herzlichen Dank!!😊💗💯",
+    name: "Sarah Wäntig",
+    role: "Local Guide · 28 Bewertungen",
+    rating: 5,
   },
 ];
 

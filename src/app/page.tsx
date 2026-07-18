@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
+import TestimonialsList from "@/components/TestimonialsList";
 import {
   ArrowRight,
   CalendarCheck,
@@ -13,7 +14,6 @@ import {
   MessageCircle,
   Phone,
   Sparkles,
-  Star,
 } from "lucide-react";
 import {
   faqs,
@@ -21,7 +21,6 @@ import {
   getWhatsappBookingUrl,
   maiHaven,
   services,
-  testimonials,
   wellnessTogether,
 } from "@/lib/mai-haven";
 
@@ -239,15 +238,12 @@ function Stats() {
   return (
     <section className="mh-stats" aria-label="Mai Haven Spa Zahlen">
       <div>
-        <strong>{wellnessTogether.packages.length}+</strong>
         <span>Wellness Pakete</span>
       </div>
       <div>
-        <strong>{services.length}+</strong>
         <span>Behandlungen</span>
       </div>
       <div>
-        <strong>2</strong>
         <span>Personen gleichzeitig</span>
       </div>
     </section>
@@ -495,18 +491,7 @@ function ReviewsAndFaq() {
       <div>
         <p className="mh-kicker">Bewertungen</p>
         <h2>Was Gäste sagen</h2>
-        <div className="mh-testimonials">
-          {testimonials.map((item) => (
-            <blockquote key={item.name}>
-              <Star aria-hidden="true" />
-              <p>&quot;{item.quote}&quot;</p>
-              <footer>
-                <strong>{item.name}</strong>
-                <span>{item.role}</span>
-              </footer>
-            </blockquote>
-          ))}
-        </div>
+        <TestimonialsList />
       </div>
     </section>
   );
