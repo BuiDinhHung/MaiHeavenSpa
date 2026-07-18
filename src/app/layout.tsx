@@ -18,8 +18,33 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(maiHaven.url),
   title: "Mai Haven Spa - Schönheit & Wellness in Berlin",
   description: `${maiHaven.name}, ${maiHaven.address}. Head Spa, Massage, Fußpflege, Beauty-Behandlungen und Wellness Together für zwei Personen.`,
+  icons: {
+    icon: maiHaven.logo,
+    shortcut: maiHaven.logo,
+    apple: maiHaven.logo,
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "DaySpa",
+  name: maiHaven.name,
+  url: maiHaven.url,
+  logo: `${maiHaven.url}${maiHaven.logo}`,
+  image: `${maiHaven.url}${maiHaven.logo}`,
+  telephone: maiHaven.phoneTel[0],
+  email: maiHaven.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: maiHaven.streetAddress,
+    postalCode: maiHaven.postalCode,
+    addressLocality: maiHaven.city,
+    addressCountry: "DE",
+  },
+  sameAs: [maiHaven.social.instagram, maiHaven.social.facebook],
 };
 
 export default function RootLayout({
@@ -27,7 +52,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`${cormorant.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
