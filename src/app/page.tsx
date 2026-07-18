@@ -18,15 +18,14 @@ import {
 import {
   faqs,
   galleryImages,
+  getWhatsappBookingUrl,
   maiHaven,
   services,
   testimonials,
   wellnessTogether,
 } from "@/lib/mai-haven";
 
-const whatsappUrl = `https://wa.me/${maiHaven.whatsapp}?text=${encodeURIComponent(
-  "Hallo Mai Haven Spa, ich möchte gerne einen Termin anfragen."
-)}`;
+const whatsappUrl = getWhatsappBookingUrl();
 
 const signatureTreatments = [
   {
@@ -154,9 +153,9 @@ function InfoStrip() {
       <div className="mh-info-phone">
         <Phone aria-hidden="true" />
         <span>
-          <a href={`tel:${maiHaven.phoneTel[0]}`}>{maiHaven.phones[0]}</a>
+          <a href={`tel:${maiHaven.phoneTel[0]}`} target="_top">{maiHaven.phones[0]}</a>
           <span aria-hidden="true"> / </span>
-          <a href={`tel:${maiHaven.phoneTel[1]}`}>{maiHaven.phones[1]}</a>
+          <a href={`tel:${maiHaven.phoneTel[1]}`} target="_top">{maiHaven.phones[1]}</a>
         </span>
       </div>
     </section>
@@ -359,7 +358,7 @@ function Packages() {
       <div className="mh-package-list">
         {wellnessTogether.packages.map((item, index) => (
           <article key={item.name} className={index === 4 ? "mh-package mh-package-featured" : "mh-package"}>
-            <div>
+            <div className="mh-package-info">
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               {item.includes ? (
@@ -372,6 +371,10 @@ function Packages() {
                   ))}
                 </ul>
               ) : null}
+              <a href={getWhatsappBookingUrl(item.name)} target="_blank" rel="noopener noreferrer">
+                Jetzt buchen
+                <ArrowRight aria-hidden="true" />
+              </a>
             </div>
             <div className="mh-prices">
               {item.prices.map((price) => (
@@ -424,7 +427,7 @@ function Treatments() {
                   </p>
                 ))}
               </div>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <a href={getWhatsappBookingUrl(service.name)} target="_blank" rel="noopener noreferrer">
                 Jetzt buchen
                 <ArrowRight aria-hidden="true" />
               </a>
@@ -521,7 +524,7 @@ function Contact() {
           Nur wenige Schritte von der U6 Platz der Luftbrücke entfernt.
         </p>
         <div className="mh-contact-lines">
-          <a href={`tel:${maiHaven.phoneTel[1]}`}>
+          <a href={`tel:${maiHaven.phoneTel[1]}`} target="_top">
             <Phone aria-hidden="true" />
             {maiHaven.phones[1]}
           </a>
@@ -529,7 +532,7 @@ function Contact() {
             <MessageCircle aria-hidden="true" />
             WhatsApp: {maiHaven.phones[0]}
           </a>
-          <a href={`mailto:${maiHaven.email}`}>
+          <a href={`mailto:${maiHaven.email}`} target="_top">
             <Mail aria-hidden="true" />
             {maiHaven.email}
           </a>

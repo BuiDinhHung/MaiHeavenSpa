@@ -19,6 +19,17 @@ export const maiHaven = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.442816044329!2d13.383719799999998!3d52.4841382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85196b8fa08db%3A0x726b84bb1b33cadf!2sMai-Haven%20Spa!5e1!3m2!1svi!2s!4v1779005089068!5m2!1svi!2s",
 };
 
+// encodeURIComponent turns spaces into %20 (never "+"), which is what wa.me
+// expects. Do not swap this for URLSearchParams/qs helpers that use
+// application/x-www-form-urlencoded encoding - those turn spaces into "+"
+// and WhatsApp then shows literal "+" characters in the prefilled message.
+export function getWhatsappBookingUrl(serviceName?: string) {
+  const message = serviceName
+    ? `Hallo Mai Haven Spa, ich interessiere mich für "${serviceName}" und möchte gerne einen Termin anfragen.`
+    : "Hallo Mai Haven Spa, ich möchte gerne einen Termin anfragen.";
+  return `https://wa.me/${maiHaven.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
 export const navItems = [
   { label: "HOME", href: "#home" },
   { label: "Behandlungen", href: "#behandlungen" },

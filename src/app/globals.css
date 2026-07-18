@@ -1139,7 +1139,8 @@ blockquote {
   margin-top: 20px;
 }
 
-.mh-service-content a {
+.mh-service-content a,
+.mh-package-info a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1152,7 +1153,8 @@ blockquote {
   text-transform: uppercase;
 }
 
-.mh-service-content a svg {
+.mh-service-content a svg,
+.mh-package-info a svg {
   width: 15px;
   height: 15px;
 }

@@ -4,11 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Menu, X } from "lucide-react";
-import { maiHaven, navItems } from "@/lib/mai-haven";
+import { getWhatsappBookingUrl, navItems } from "@/lib/mai-haven";
 
-const whatsappUrl = `https://wa.me/${maiHaven.whatsapp}?text=${encodeURIComponent(
-  "Hallo Mai Haven Spa, ich möchte gerne einen Termin anfragen."
-)}`;
+const whatsappUrl = getWhatsappBookingUrl();
 
 export default function SiteHeader() {
   const [solid, setSolid] = useState(false);
