@@ -122,7 +122,7 @@ export const services = [
   {
     id: "service-body-massage",
     name: "Body Massage",
-    image: "/images/mai-haven/services/hot-stone-herbal-compress.png",
+    image: "/images/mai-haven/services/bodymass.png",
     description:
       "Nicht jede Verspannung braucht Medikamente – manchmal braucht der Körper einfach die richtigen Hände.",
     prices: [
