@@ -201,8 +201,9 @@ function SignatureTreatments() {
         <p className="mh-kicker">Unsere Behandlungen</p>
         <h2>Private Auszeit im Mai Haven Spa</h2>
         <p>
-          Buchen Sie Ihre Behandlung für Kopfhaut, Körper, Haut und Füße.
-          Jede Anwendung wird individuell auf Ihre Wünsche abgestimmt.
+          Gönnen Sie sich eine wohltuende Auszeit. Ob Head Spa, Massage,
+          Fußpflege oder Hautpflege – jede Behandlung wird individuell auf Ihre
+          Bedürfnisse abgestimmt.
         </p>
       </div>
       <div className="mh-signature-grid">
