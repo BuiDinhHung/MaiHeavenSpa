@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL(maiHaven.url),
-  title: "Mai Haven Spa - Schönheit & Wellness in Berlin",
+  title: "Mai Heaven Spa - Schönheit & Wellness in Berlin",
   description: `${maiHaven.name}, ${maiHaven.address}. Head Spa, Massage, Fußpflege, Beauty-Behandlungen und Wellness Together für zwei Personen.`,
   icons: {
     icon: maiHaven.logo,

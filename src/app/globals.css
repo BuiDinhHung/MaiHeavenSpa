@@ -614,6 +614,30 @@ blockquote {
   content: "";
 }
 
+.mh-intro-benefits {
+  display: grid;
+  gap: 9px;
+  width: fit-content;
+  margin: 24px auto 0;
+  padding: 0;
+  color: var(--emerald);
+  font-size: 14px;
+  font-weight: 500;
+  list-style: none;
+  text-align: left;
+}
+
+.mh-intro-benefits li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mh-intro-benefits span {
+  width: 1.5em;
+  text-align: center;
+}
+
 .mh-highlights {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -96,7 +96,7 @@ function Hero() {
     <section id="home" className="mh-hero">
       <Image
         src="/images/mai-haven/anhbiadautrangdesktop.png"
-        alt="Massagebehandlung im Mai Haven Spa"
+        alt="Massagebehandlung im Mai Heaven Spa"
         fill
         priority
         sizes="100vw"
@@ -104,7 +104,7 @@ function Hero() {
       />
       <Image
         src="/images/mai-haven/anhbiadautrang.png"
-        alt="Massagebehandlung im Mai Haven Spa"
+        alt="Massagebehandlung im Mai Heaven Spa"
         fill
         priority
         sizes="(max-width: 760px) 100vw, 1px"
@@ -113,7 +113,7 @@ function Hero() {
       <div className="mh-hero-shade" />
       <div className="mh-hero-inner">
         <div className="mh-hero-copy mh-reveal">
-          <p className="mh-kicker">Mai Haven Spa</p>
+          <p className="mh-kicker">Mai Heaven Spa</p>
           <h1>Ihre Auszeit.<br />Nur für Sie.</h1>
           <p className="mh-hero-services">Massage · Head Spa · Fußpflege in Berlin</p>
           <p className="mh-hero-text">
@@ -123,7 +123,7 @@ function Hero() {
           <div className="mh-actions">
             <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
               <CalendarCheck aria-hidden="true" />
-              Jetzt buchen
+              Termin buchen
             </a>
           </div>
         </div>
@@ -165,7 +165,7 @@ function Highlights() {
   return (
     <section className="mh-section mh-welcome" aria-labelledby="welcome-title">
       <div className="mh-welcome-copy">
-        <p className="mh-kicker">Willkommen im Mai Haven Spa</p>
+        <p className="mh-kicker">Willkommen im Mai Heaven Spa</p>
         <h2 id="welcome-title">
           Ein Ort, an dem Körper und Seele<br />
           zur Ruhe kommen.
@@ -176,7 +176,7 @@ function Highlights() {
           Wohlbefinden.
         </p>
         <a href={whatsappUrl} className="mh-button mh-button-primary" target="_blank" rel="noopener noreferrer">
-          ✨ Jetzt Termin buchen
+          ✨ Termin buchen
           <ArrowRight aria-hidden="true" />
         </a>
       </div>
@@ -199,12 +199,17 @@ function SignatureTreatments() {
     <section id="behandlungen" className="mh-section mh-signature">
       <div className="mh-section-head mh-section-head-wide">
         <p className="mh-kicker">Unsere Behandlungen</p>
-        <h2>Private Auszeit im Mai Haven Spa</h2>
+        <h2>Private Auszeit im Mai Heaven Spa</h2>
         <p>
           Gönnen Sie sich eine wohltuende Auszeit. Ob Head Spa, Massage,
           Fußpflege oder Hautpflege – jede Behandlung wird individuell auf Ihre
           Bedürfnisse abgestimmt.
         </p>
+        <ul className="mh-intro-benefits" aria-label="Ihre Vorteile">
+          <li><span aria-hidden="true">🌿</span>Individuelle Behandlungen</li>
+          <li><span aria-hidden="true">💆</span>Entspannung ohne Zeitdruck</li>
+          <li><span aria-hidden="true">✨</span>Persönliche Betreuung</li>
+        </ul>
       </div>
       <div className="mh-signature-grid">
         {signatureTreatments.map((treatment) => (
@@ -237,7 +242,7 @@ function SignatureTreatments() {
 
 function Stats() {
   return (
-    <section className="mh-stats" aria-label="Mai Haven Spa Zahlen">
+    <section className="mh-stats" aria-label="Mai Heaven Spa Zahlen">
       <div>
         <span>Wellness Pakete</span>
       </div>
@@ -256,7 +261,7 @@ function Atmosphere() {
     <section className="mh-atmosphere">
       <Image
         src="/images/mai-haven/gallery-wide.png"
-        alt="Empfangsbereich im Mai Haven Spa"
+        alt="Empfangsbereich im Mai Heaven Spa"
         fill
         sizes="100vw"
       />
@@ -276,14 +281,14 @@ function StudioNote() {
       <div className="mh-note-media">
         <Image
           src="/images/mai-haven/gallery-portrait.png"
-          alt="Ruhige Atmosphäre im Mai Haven Spa"
+          alt="Ruhige Atmosphäre im Mai Heaven Spa"
           fill
           sizes="(min-width: 900px) 38vw, 100vw"
         />
       </div>
       <div>
         <p className="mh-kicker">Über die Inhaberin</p>
-        <h2>Willkommen bei Mai Haven Spa.</h2>
+        <h2>Willkommen bei Mai Heaven Spa.</h2>
         <p>
           Mit langjähriger Erfahrung und viel Leidenschaft begleiten wir unsere Gäste
           auf dem Weg zu mehr Entspannung und Wohlbefinden.
@@ -323,7 +328,7 @@ function WellnessTogether() {
       <div className="mh-together-visual">
         <Image
           src="/images/mai-haven/services/cặp đôi.png"
-          alt="Wellness-Behandlung für zwei Personen im Mai Haven Spa"
+          alt="Wellness-Behandlung für zwei Personen im Mai Heaven Spa"
           fill
           sizes="(min-width: 900px) 50vw, 100vw"
         />
@@ -369,7 +374,7 @@ function Packages() {
                 </ul>
               ) : null}
               <a href={getWhatsappBookingUrl(item.name)} target="_blank" rel="noopener noreferrer">
-                Jetzt buchen
+                Termin buchen
                 <ArrowRight aria-hidden="true" />
               </a>
             </div>
@@ -407,7 +412,7 @@ function Treatments() {
               <div className="mh-service-media">
                 <Image
                   src={service.image}
-                  alt={`${service.name} im Mai Haven Spa`}
+                  alt={`${service.name} im Mai Heaven Spa`}
                   fill
                   sizes="(min-width: 900px) 26vw, 100vw"
                 />
@@ -425,7 +430,7 @@ function Treatments() {
                 ))}
               </div>
               <a href={getWhatsappBookingUrl(service.name)} target="_blank" rel="noopener noreferrer">
-                Jetzt buchen
+                Termin buchen
                 <ArrowRight aria-hidden="true" />
               </a>
             </div>
@@ -546,7 +551,7 @@ function Contact() {
         </a>
       </div>
       <iframe
-        title="Mai Haven Spa Google Maps"
+        title="Mai Heaven Spa Google Maps"
         src={maiHaven.mapsEmbed}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
@@ -559,7 +564,7 @@ function Footer() {
   return (
     <footer className="mh-footer">
       <div>
-        <strong>Mai Haven Spa</strong>
+        <strong>Mai Heaven Spa</strong>
         <p>{maiHaven.address}</p>
       </div>
       <nav aria-label="Footer Navigation">

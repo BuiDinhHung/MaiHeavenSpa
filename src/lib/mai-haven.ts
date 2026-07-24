@@ -1,5 +1,5 @@
 export const maiHaven = {
-  name: "Mai Haven Spa",
+  name: "Mai Heaven Spa",
   tagline: "Schönheit & Wellness",
   url: "https://www.mai-haven-spa.de",
   logo: "/images/logo.png",
@@ -30,8 +30,8 @@ export const maiHaven = {
 // and WhatsApp then shows literal "+" characters in the prefilled message.
 export function getWhatsappBookingUrl(serviceName?: string) {
   const message = serviceName
-    ? `Hallo Mai Haven Spa, ich interessiere mich für "${serviceName}" und möchte gerne einen Termin anfragen.`
-    : "Hallo Mai Haven Spa, ich möchte gerne einen Termin anfragen.";
+    ? `Hallo Mai Heaven Spa, ich interessiere mich für "${serviceName}" und möchte gerne einen Termin anfragen.`
+    : "Hallo Mai Heaven Spa, ich möchte gerne einen Termin anfragen.";
   return `https://wa.me/${maiHaven.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
@@ -63,7 +63,7 @@ export const wellnessTogether = {
   subheadline: "Gemeinsam entspannen. Gemeinsam genießen.",
   intro: [
     "Wellness ist am schönsten, wenn man sie teilt.",
-    "Ob als Paar, mit der besten Freundin, Mutter und Tochter, Geschwistern oder einem lieben Menschen – genießen Sie Ihre gemeinsame Auszeit bei Mai Haven Spa.",
+    "Ob als Paar, mit der besten Freundin, Mutter und Tochter, Geschwistern oder einem lieben Menschen – genießen Sie Ihre gemeinsame Auszeit bei Mai Heaven Spa.",
     "Alle Behandlungen finden gleichzeitig statt und werden individuell auf Ihre Wünsche abgestimmt.",
   ],
   packages: [
@@ -202,7 +202,7 @@ export const services = [
 ];
 
 export const galleryImages = [
-  { src: "/images/mai-haven/gallery-portrait.png", alt: "Behandlungsraum im Mai Haven Spa" },
+  { src: "/images/mai-haven/gallery-portrait.png", alt: "Behandlungsraum im Mai Heaven Spa" },
   { src: "/images/mai-haven/spa-room-01.png", alt: "Wellness-Sessel für zwei Personen" },
   { src: "/images/mai-haven/head-spa.png", alt: "Head Spa Behandlung" },
   { src: "/images/mai-haven/spa-room-03.png", alt: "Beauty Behandlung" },
@@ -212,7 +212,7 @@ export const galleryImages = [
 export const testimonials = [
   {
     quote:
-      "Ich hatte eine wunderbare Erfahrung im Mai Haven Spa! Alles war sehr sauber, angenehm und professionell. Ich komme auf jeden Fall wieder. 🌸",
+      "Ich hatte eine wunderbare Erfahrung im Mai Heaven Spa! Alles war sehr sauber, angenehm und professionell. Ich komme auf jeden Fall wieder. 🌸",
     name: "Trang Nguyen",
     role: "6 Bewertungen · 3 Fotos",
     rating: 5,

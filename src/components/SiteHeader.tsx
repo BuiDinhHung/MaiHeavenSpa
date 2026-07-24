@@ -31,11 +31,11 @@ export default function SiteHeader() {
   return (
     <>
       <header className={`mh-header${solid || menuOpen ? " mh-header-solid" : ""}`}>
-        <Link href="#home" className="mh-brand" aria-label="Mai Haven Spa Home" onClick={() => setMenuOpen(false)}>
+        <Link href="#home" className="mh-brand" aria-label="Mai Heaven Spa Home" onClick={() => setMenuOpen(false)}>
           <span className="mh-brand-mark">
             <Image src="/images/logo.png" alt="" fill sizes="56px" />
           </span>
-          <span>Mai Haven Spa</span>
+          <span>Mai Heaven Spa</span>
         </Link>
         <nav id="mobile-navigation" className={`mh-nav${menuOpen ? " mh-nav-open" : ""}`} aria-label="Hauptnavigation">
           {navItems.map((item) => (
@@ -45,7 +45,7 @@ export default function SiteHeader() {
           ))}
         </nav>
         <a href={whatsappUrl} className="mh-header-cta" target="_blank" rel="noopener noreferrer">
-          Jetzt buchen
+          Termin buchen
         </a>
         <button
           type="button"
@@ -63,10 +63,10 @@ export default function SiteHeader() {
         className="mh-mobile-booking"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Jetzt Termin über WhatsApp buchen"
+        aria-label="Termin über WhatsApp buchen"
       >
         <CalendarDays aria-hidden="true" />
-        Jetzt buchen
+        Termin buchen
       </a>
     </>
   );
