@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
-import SalePopup from "@/components/SalePopup";
 import TestimonialsList from "@/components/TestimonialsList";
 import {
   ArrowRight,
@@ -587,7 +586,6 @@ function Footer() {
 export default function Home() {
   return (
     <div className="mh-site">
-      <SalePopup />
       <SiteHeader />
       <main>
         <Hero />
